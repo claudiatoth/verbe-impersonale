@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards - Verbe Impersonale</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .butterfly {
+            font-size: 45px;
+        }
+
+        .brand-name {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .back-btn {
+            background: white;
+            color: #10b981;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .back-btn:hover {
+            background: #f0fdf4;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Progress */
+        .progress-section {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .progress-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar-container {
+            background: rgba(255,255,255,0.2);
+            height: 12px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: white;
+            height: 100%;
+            border-radius: 6px;
+            transition: width 0.3s ease;
+        }
+
+        /* Card Container */
+        .card-container {
+            perspective: 1000px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            width: 100%;
+            height: 500px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .card-front {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+        }
+
+        .card-back {
+            background: white;
+            color: #1f2937;
+            transform: rotateY(180deg);
+        }
+
+        .card-label {
+            font-size: 18px;
+            font-weight: 600;
+            opacity: 0.7;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .card-content {
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .card-back .card-content {
+            color: #10b981;
+        }
+
+        .audio-btn {
+            background: white;
+            color: #10b981;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .audio-btn:hover {
+            background: #f0fdf4;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .card-back .instruction {
+            font-size: 20px;
+            color: #6b7280;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .nav-btn {
+            background: white;
+            color: #10b981;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 140px;
+        }
+
+        .nav-btn:hover:not(:disabled) {
+            background: #f0fdf4;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Shuffle Button */
+        .shuffle-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        .shuffle-btn:hover {
+            background: white;
+            color: #10b981;
+        }
+
+        /* Instructions */
+        .instructions {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            color: #1f2937;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .instructions h3 {
+            color: #10b981;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .instructions p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .card {
+                height: 400px;
+            }
+
+            .card-content {
+                font-size: 36px;
+            }
+
+            .nav-btn {
+                padding: 12px 25px;
+                font-size: 16px;
+                min-width: 100px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .brand-name {
+                font-size: 24px;
+            }
+
+            .butterfly {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Back to Lesson Button at Top -->
+        <a href="index.html" class="back-btn" style="display: inline-block; margin-bottom: 20px;">← Înapoi la lecție</a>
+
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-section">
+                <span class="butterfly">ʚଓ</span>
+                <span class="brand-name">Claudia Toth</span>
+            </div>
+            <h1>Flashcards - Verbe Impersonale</h1>
+        </div>
+
+        <!-- Progress -->
+        <div class="progress-section">
+            <div class="progress-text" id="progress-text">Card 1 din 10</div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </div>
+
+        <!-- Shuffle Button -->
+        <button class="shuffle-btn" onclick="shuffleCards()">🔀 Amestecă cardurile</button>
+
+        <!-- Card -->
+        <div class="card-container">
+            <div class="card" id="flashcard" onclick="flipCard()">
+                <div class="card-face card-front">
+                    <div class="card-label">Germană</div>
+                    <div class="card-content" id="front-content">es regnet</div>
+                    <button class="audio-btn" onclick="playAudio(event)">
+                        🔊 Ascultă pronunția
+                    </button>
+                </div>
+                <div class="card-face card-back">
+                    <div class="card-label">Română</div>
+                    <div class="card-content" id="back-content">plouă</div>
+                    <div class="instruction">Click pentru a întoarce cardul</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-buttons">
+            <button class="nav-btn" id="prev-btn" onclick="previousCard()">← Anterior</button>
+            <button class="nav-btn" id="next-btn" onclick="nextCard()">Următorul →</button>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <h3>📖 Cum să folosești flashcard-urile:</h3>
+            <p>
+                <strong>Click pe card</strong> pentru a-l întoarce și vedea traducerea.<br>
+                <strong>🔊 Click pe buton</strong> pentru a asculta pronunția corectă în germană.<br>
+                <strong>Săgeți</strong> pentru a naviga între carduri.<br>
+                <strong>🔀 Amestecă</strong> cardurile pentru a învăța în ordine aleatorie.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Flashcards data
+        const flashcardsData = [
+            { de: "es regnet", ro: "plouă" },
+            { de: "es schneit", ro: "ninge" },
+            { de: "es donnert", ro: "tună" },
+            { de: "es blitzt", ro: "fulgeră" },
+            { de: "es klingelt", ro: "sună (soneria)" },
+            { de: "es gibt", ro: "există" },
+            { de: "es friert", ro: "îngheață" },
+            { de: "es riecht", ro: "miroase" },
+            { de: "es wird dunkel", ro: "se întunecă" },
+            { de: "es nebelt", ro: "e ceață" }
+        ];
+
+        let currentCardIndex = 0;
+        let isFlipped = false;
+
+        // Initialize
+        function init() {
+            updateCard();
+            updateProgress();
+            updateButtons();
+        }
+
+        // Update card content
+        function updateCard() {
+            const card = flashcardsData[currentCardIndex];
+            document.getElementById('front-content').textContent = card.de;
+            document.getElementById('back-content').textContent = card.ro;
+            
+            // Reset flip
+            const flashcard = document.getElementById('flashcard');
+            flashcard.classList.remove('flipped');
+            isFlipped = false;
+        }
+
+        // Flip card
+        function flipCard() {
+            const flashcard = document.getElementById('flashcard');
+            flashcard.classList.toggle('flipped');
+            isFlipped = !isFlipped;
+        }
+
+        // Play audio using Text-to-Speech
+        function playAudio(event) {
+            event.stopPropagation();
+            
+            const card = flashcardsData[currentCardIndex];
+            
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                
+                const utterance = new SpeechSynthesisUtterance(card.de);
+                utterance.lang = 'de-DE';
+                utterance.rate = 0.75;
+                utterance.pitch = 1.1;
+                
+                // Try to select German female voice
+                const loadVoices = () => {
+                    const voices = window.speechSynthesis.getVoices();
+                    const germanFemaleVoice = voices.find(voice => 
+                        voice.lang.includes('de') && voice.name.toLowerCase().includes('female')
+                    ) || voices.find(voice => voice.lang.includes('de'));
+                    
+                    if (germanFemaleVoice) {
+                        utterance.voice = germanFemaleVoice;
+                    }
+                    
+                    window.speechSynthesis.speak(utterance);
+                };
+
+                // Load voices (needed for some browsers)
+                if (window.speechSynthesis.getVoices().length === 0) {
+                    window.speechSynthesis.addEventListener('voiceschanged', loadVoices);
+                } else {
+                    loadVoices();
+                }
+            } else {
+                alert('Ne pare rău, browser-ul tău nu suportă funcția de pronunție audio.');
+            }
+        }
+
+        // Next card
+        function nextCard() {
+            if (currentCardIndex < flashcardsData.length - 1) {
+                currentCardIndex++;
+                updateCard();
+                updateProgress();
+                updateButtons();
+            }
+        }
+
+        // Previous card
+        function previousCard() {
+            if (currentCardIndex > 0) {
+                currentCardIndex--;
+                updateCard();
+                updateProgress();
+                updateButtons();
+            }
+        }
+
+        // Update progress
+        function updateProgress() {
+            const progressText = document.getElementById('progress-text');
+            const progressBar = document.getElementById('progress-bar');
+            
+            progressText.textContent = `Card ${currentCardIndex + 1} din ${flashcardsData.length}`;
+            
+            const percentage = ((currentCardIndex + 1) / flashcardsData.length) * 100;
+            progressBar.style.width = percentage + '%';
+        }
+
+        // Update buttons state
+        function updateButtons() {
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            
+            prevBtn.disabled = currentCardIndex === 0;
+            nextBtn.disabled = currentCardIndex === flashcardsData.length - 1;
+        }
+
+        // Shuffle cards
+        function shuffleCards() {
+            for (let i = flashcardsData.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [flashcardsData[i], flashcardsData[j]] = [flashcardsData[j], flashcardsData[i]];
+            }
+            currentCardIndex = 0;
+            updateCard();
+            updateProgress();
+            updateButtons();
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                previousCard();
+            } else if (e.key === 'ArrowRight') {
+                nextCard();
+            } else if (e.key === ' ') {
+                e.preventDefault();
+                flipCard();
+            }
+        });
+
+        // Initialize on load
+        init();
+    </script>
+</body>
+</html>
