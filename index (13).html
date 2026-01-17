@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verbele Impersonale in Limba Germana</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header / Navbar */
+        .header {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .butterfly {
+            font-size: 40px;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-name {
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        .brand-subtitle {
+            font-size: 11px;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hamburger Menu Button */
+        .hamburger-btn {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hamburger-btn:hover {
+            background: white;
+            color: #10b981;
+        }
+
+        .hamburger-icon {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .hamburger-icon span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: currentColor;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            margin-top: 0;
+        }
+
+        .nav-menu.active {
+            max-height: 500px;
+            margin-top: 20px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .nav-btn:hover {
+            background: white;
+            color: #10b981;
+            transform: translateY(-2px);
+        }
+
+        .flashcards-btn {
+            background: white;
+            color: #10b981;
+        }
+
+        .flashcards-btn:hover {
+            background: rgba(255,255,255,0.9);
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        /* Content */
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #10b981;
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #10b981;
+            font-size: 28px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #10b981;
+        }
+
+        h3 {
+            color: #10b981;
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #374151;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-style: italic;
+            color: #6b7280;
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            font-size: 18px;
+            color: #374151;
+        }
+
+        .highlight {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #f0fdf4;
+            padding: 15px;
+            border-left: 4px solid #10b981;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .table-wrapper::after {
+            content: '← Scroll →';
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(16, 185, 129, 0.9);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 600;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .table-wrapper::after {
+                opacity: 1;
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        tr:hover {
+            background: #f7fafc;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Exercises */
+        .exercise {
+            background: #f9fafb;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 2px solid #e5e7eb;
+        }
+
+        .exercise-title {
+            color: #10b981;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .exercise-instruction {
+            font-style: italic;
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 15px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .answer-input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-top: 8px;
+            transition: all 0.3s ease;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .answer-input:focus {
+            outline: none;
+            border-color: #10b981;
+        }
+
+        textarea.answer-input {
+            resize: vertical;
+            min-height: 60px;
+        }
+
+        .check-btn {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .check-btn:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .feedback {
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        .feedback.correct {
+            background: #d1fae5;
+            color: #065f46;
+            border: 2px solid #10b981;
+        }
+
+        .feedback.incorrect {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 2px solid #ef4444;
+        }
+
+        /* Dropdown sections */
+        .dropdown-section {
+            margin: 30px 0;
+        }
+
+        .dropdown-header {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 18px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-header:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .dropdown-content {
+            display: none;
+            padding: 25px;
+            background: #f9fafb;
+            border-radius: 0 0 10px 10px;
+            margin-top: -10px;
+        }
+
+        .dropdown-content.active {
+            display: block;
+        }
+
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .arrow.rotated {
+            transform: rotate(180deg);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.show {
+            display: flex;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+        }
+
+        /* Audio Play Button */
+        .audio-play-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .audio-play-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #6b7280;
+            font-size: 16px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+            th, td {
+                padding: 10px 12px;
+            }
+
+            .nav-buttons {
+                justify-content: center;
+            }
+
+            .brand-name {
+                font-size: 24px;
+            }
+
+            .butterfly {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-top">
+                <div class="logo-section">
+                    <span class="butterfly">ʚଓ</span>
+                    <div class="brand-text">
+                        <span class="brand-name">Claudia Toth</span>
+                        <span class="brand-subtitle">Curs autorizat de limba germana</span>
+                    </div>
+                </div>
+                
+                <button class="hamburger-btn" onclick="toggleMenu()">
+                    <div class="hamburger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span style="font-size: 16px;">Meniu</span>
+                </button>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <div class="nav-buttons">
+                    <a href="#teoria" class="nav-btn">Teoria</a>
+                    <a href="#exercitiul1" class="nav-btn">Exercitiul 1</a>
+                    <a href="#exercitiul2" class="nav-btn">Exercitiul 2</a>
+                    <a href="#exercitiul3" class="nav-btn">Exercitiul 3</a>
+                    <a href="#exercitiul4" class="nav-btn">Exercitiul 4</a>
+                    <a href="flashcards.html" class="nav-btn flashcards-btn">🎴 Flashcards</a>
+                    <a href="Verbe_Impersonale_Germana.pdf" class="nav-btn" target="_blank">📄 PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <h1>Verbele Impersonale in Limba Germana</h1>
+            <p class="subtitle">Unpersönliche Verben / Verben mit 'es'</p>
+
+            <!-- Theory Section -->
+            <section id="teoria">
+                <h2>📚 1. Teorie - Ce sunt verbele impersonale?</h2>
+                
+                <div class="dropdown-section">
+                    <div class="dropdown-header" onclick="toggleDropdown('teoria-content')">
+                        <span>Deschide teoria</span>
+                        <span class="arrow" id="arrow-teoria-content">▼</span>
+                    </div>
+                    <div class="dropdown-content" id="teoria-content">
+                        <!-- Audio Button for Theory -->
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <button class="audio-play-btn" onclick="playAudio('teoria')">
+                                🔊 Asculta teoria
+                            </button>
+                            <audio id="audio-teoria" src="audio_teoria.mp3"></audio>
+                        </div>
+                        <p>Verbele impersonale in limba germana sunt verbe care se conjuga numai la persoana a III-a singular si sunt intotdeauna insotite de pronumele <span class="highlight">'es'</span>. Aceste verbe descriu in principal fenomene naturale, stari sau procese care nu au un subiect concret.</p>
+
+                        <h3>Caracteristici principale:</h3>
+                        <ul>
+                            <li>Se folosesc intotdeauna cu pronumele <span class="highlight">'es'</span> ca subiect formal</li>
+                            <li>Nu pot avea un alt subiect in propozitie</li>
+                            <li>Se conjuga doar la persoana a III-a singular</li>
+                            <li>Descriu fenomene naturale, vremea, sunete din natura, stari generale</li>
+                            <li>'Es' nu poate fi inlocuit cu alt pronume si nu se refera la nimic anume</li>
+                        </ul>
+
+                        <h3>Structura propozitiei:</h3>
+                        <div class="example">
+                            <strong>Es</strong> + <strong>verb (conjugat la pers. a III-a sg.)</strong> + (complement)
+                            <br><br>
+                            <strong>Exemplu:</strong> <span class="highlight">Es regnet</span> heute. → Ploua astazi.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown-section" style="margin-top: 20px;">
+                    <div class="dropdown-header" onclick="toggleDropdown('table-a')">
+                        <span>A. Fenomene meteo (Wetter)</span>
+                        <span class="arrow" id="arrow-table-a">▼</span>
+                    </div>
+                    <div class="dropdown-content" id="table-a">
+                        <!-- Audio Button for Table A -->
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <button class="audio-play-btn" onclick="playAudio('table-a')">
+                                🔊 Asculta vocabularul meteo
+                            </button>
+                            <audio id="audio-table-a" src="audio_table_a.mp3"></audio>
+                        </div>
+                        <div class="table-wrapper">
+                            <table>
+                                <tr>
+                                    <th>Verbul</th>
+                                    <th>Traducere</th>
+                                    <th>Exemplu in germana</th>
+                                    <th>Traducere in romana</th>
+                                </tr>
+                                <tr>
+                                    <td><strong>es regnet</strong></td>
+                                    <td>ploua</td>
+                                    <td>Es regnet stark.</td>
+                                    <td>Ploua tare.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>es schneit</strong></td>
+                                    <td>ninge</td>
+                                    <td>Es schneit den ganzen Tag.</td>
+                                    <td>Ninge toata ziua.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>es hagelt</strong></td>
+                                    <td>cade grindina</td>
+                                    <td>Es hagelt im Sommer.</td>
+                                    <td>Cade grindina vara.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>es donnert</strong></td>
+                                    <td>tuna</td>
+                                    <td>Es donnert und blitzt.</td>
+                                    <td>Tuna si fulgera.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>es blitzt</strong></td>
+                                    <td>fulgera</td>
+                                    <td>Es blitzt am Himmel.</td>
+                                    <td>Fulgera pe cer.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>es friert</strong></td>
+                                    <td>ingheata</td>
+                                    <td>Es friert nachts.</td>
+                                    <td>Ingheata noaptea.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>es taut</strong></td>
+                                    <td>se dezgheata</td>
+                                    <td>Es taut langsam.</td>
+                                    <td>Se dezgheata incet.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>es nieselt</strong></td>
+                                    <td>burnita</td>
+                                    <td>Es nieselt den ganzen Tag.</td>
+                                    <td>Burnita toata ziua.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>es stürmt</strong></td>
+                                    <td>e furtuna</td>
+                                    <td>Es stürmt draußen.</td>
+                                    <td>E furtuna afara.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>es nebelt</strong></td>
+                                    <td>e ceata</td>
+                                    <td>Es nebelt morgens.</td>
+                                    <td>E ceata dimineata.</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown-section" style="margin-top: 20px;">
+                    <div class="dropdown-header" onclick="toggleDropdown('table-b')">
+                        <span>B. Timp si fenomene naturale</span>
+                        <span class="arrow" id="arrow-table-b">▼</span>
+                    </div>
+                    <div class="dropdown-content" id="table-b">
+                        <!-- Audio Button for Table B -->
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <button class="audio-play-btn" onclick="playAudio('table-b')">
+                                🔊 Asculta vocabularul timp
+                            </button>
+                            <audio id="audio-table-b" src="audio_table_b.mp3"></audio>
+                        </div>
+                        <div class="table-wrapper">
+                            <table>
+                                <tr>
+                                    <th>Verbul</th>
+                                    <th>Traducere</th>
+                                    <th>Exemplu in germana</th>
+                                    <th>Traducere in romana</th>
+                                </tr>
+                                <tr>
+                                    <td><strong>es wird hell</strong></td>
+                                    <td>se lumineaza</td>
+                                    <td>Es wird hell am Morgen.</td>
+                                    <td>Se lumineaza dimineata.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>es wird dunkel</strong></td>
+                                    <td>se intuneca</td>
+                                    <td>Es wird dunkel am Abend.</td>
+                                    <td>Se intuneca seara.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>es dämmert</strong></td>
+                                    <td>se insereaza</td>
+                                    <td>Es dämmert schon.</td>
+                                    <td>Deja se insereaza.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>es tagt</strong></td>
+                                    <td>se lumineaza (de ziua)</td>
+                                    <td>Es tagt bald.</td>
+                                    <td>Se lumineaza curand.</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown-section" style="margin-top: 20px;">
+                    <div class="dropdown-header" onclick="toggleDropdown('table-c')">
+                        <span>C. Sunete si senzatii</span>
+                        <span class="arrow" id="arrow-table-c">▼</span>
+                    </div>
+                    <div class="dropdown-content" id="table-c">
+                        <!-- Audio Button for Table C -->
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <button class="audio-play-btn" onclick="playAudio('table-c')">
+                                🔊 Asculta vocabularul sunete
+                            </button>
+                            <audio id="audio-table-c" src="audio_table_c.mp3"></audio>
+                        </div>
+                        <div class="table-wrapper">
+                            <table>
+                                <tr>
+                                    <th>Verbul</th>
+                                    <th>Traducere</th>
+                                    <th>Exemplu in germana</th>
+                                    <th>Traducere in romana</th>
+                                </tr>
+                                <tr>
+                                    <td><strong>es klopft</strong></td>
+                                    <td>se bate (la usa)</td>
+                                    <td>Es klopft an der Tür.</td>
+                                    <td>Se bate la usa.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>es klingelt</strong></td>
+                                    <td>suna (soneria)</td>
+                                    <td>Es klingelt an der Tür.</td>
+                                    <td>Suna soneria la usa.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>es riecht</strong></td>
+                                    <td>miroase</td>
+                                    <td>Es riecht nach Blumen.</td>
+                                    <td>Miroase a flori.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>es schmeckt</strong></td>
+                                    <td>gusta</td>
+                                    <td>Es schmeckt gut.</td>
+                                    <td>Gusta bine.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>es brennt</strong></td>
+                                    <td>arde</td>
+                                    <td>Es brennt im Haus!</td>
+                                    <td>Arde in casa!</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>es läutet</strong></td>
+                                    <td>suna (clopotul)</td>
+                                    <td>Es läutet zur Pause.</td>
+                                    <td>Suna la pauza.</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown-section" style="margin-top: 20px;">
+                    <div class="dropdown-header" onclick="toggleDropdown('table-d')">
+                        <span>D. Stari si situatii generale</span>
+                        <span class="arrow" id="arrow-table-d">▼</span>
+                    </div>
+                    <div class="dropdown-content" id="table-d">
+                        <!-- Audio Button for Table D -->
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <button class="audio-play-btn" onclick="playAudio('table-d')">
+                                🔊 Asculta vocabularul stari
+                            </button>
+                            <audio id="audio-table-d" src="audio_table_d.mp3"></audio>
+                        </div>
+                        <div class="table-wrapper">
+                            <table>
+                                <tr>
+                                    <th>Verbul</th>
+                                    <th>Traducere</th>
+                                    <th>Exemplu in germana</th>
+                                    <th>Traducere in romana</th>
+                                </tr>
+                                <tr>
+                                    <td><strong>es geht</strong></td>
+                                    <td>merge (situatia)</td>
+                                    <td>Es geht mir gut.</td>
+                                    <td>Imi merge bine.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>es gibt</strong></td>
+                                    <td>exista</td>
+                                    <td>Es gibt viele Menschen.</td>
+                                    <td>Exista multi oameni.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>es fehlt</strong></td>
+                                    <td>lipseste</td>
+                                    <td>Es fehlt mir an Zeit.</td>
+                                    <td>Imi lipseste timpul.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>es handelt sich</strong></td>
+                                    <td>e vorba despre</td>
+                                    <td>Es handelt sich um ein Problem.</td>
+                                    <td>E vorba despre o problema.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>es kommt darauf an</strong></td>
+                                    <td>depinde</td>
+                                    <td>Es kommt auf dich an.</td>
+                                    <td>Depinde de tine.</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exercise 1 -->
+            <section id="exercitiul1">
+                <div class="dropdown-section">
+                    <div class="dropdown-header" onclick="toggleDropdown('ex1')">
+                        <span>📝 Exercitiul 1: Completeaza cu verbul corect</span>
+                        <span class="arrow" id="arrow-ex1">▼</span>
+                    </div>
+                    <div class="dropdown-content" id="ex1">
+                        <div class="exercise">
+                            <p class="exercise-instruction">Instructiuni: Alege verbul impersonal potrivit pentru fiecare propozitie.</p>
+                            
+                            <div class="question">
+                                1. Im Winter __________ oft. (ninge)
+                                <input type="text" class="answer-input" id="ex1-q1" placeholder="Raspunsul tau">
+                                <div class="answer-display" id="answer-ex1-q1" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Raspuns corect: schneit es
+                                </div>
+                            </div>
+                            
+                            <div class="question">
+                                2. Hörst du? __________ an der Tür! (suna soneria)
+                                <input type="text" class="answer-input" id="ex1-q2" placeholder="Raspunsul tau">
+                                <div class="answer-display" id="answer-ex1-q2" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Raspuns corect: Es klingelt
+                                </div>
+                            </div>
+                            
+                            <div class="question">
+                                3. Vorsicht! __________ ! (tuna)
+                                <input type="text" class="answer-input" id="ex1-q3" placeholder="Raspunsul tau">
+                                <div class="answer-display" id="answer-ex1-q3" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Raspuns corect: Es donnert
+                                </div>
+                            </div>
+                            
+                            <div class="question">
+                                4. Am Abend __________ früh. (se intuneca)
+                                <input type="text" class="answer-input" id="ex1-q4" placeholder="Raspunsul tau">
+                                <div class="answer-display" id="answer-ex1-q4" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Raspuns corect: wird es dunkel
+                                </div>
+                            </div>
+                            
+                            <div class="question">
+                                5. In der Küche __________ nach Pizza. (miroase)
+                                <input type="text" class="answer-input" id="ex1-q5" placeholder="Raspunsul tau">
+                                <div class="answer-display" id="answer-ex1-q5" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Raspuns corect: riecht es
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                6. Morgen __________ stark. (ploua)
+                                <input type="text" class="answer-input" id="ex1-q6" placeholder="Raspunsul tau">
+                                <div class="answer-display" id="answer-ex1-q6" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Raspuns corect: regnet es
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                7. Im Herbst __________ oft. (e ceata)
+                                <input type="text" class="answer-input" id="ex1-q7" placeholder="Raspunsul tau">
+                                <div class="answer-display" id="answer-ex1-q7" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Raspuns corect: nebelt es
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                8. Bei minus 10 Grad __________ . (ingheata)
+                                <input type="text" class="answer-input" id="ex1-q8" placeholder="Raspunsul tau">
+                                <div class="answer-display" id="answer-ex1-q8" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Raspuns corect: gefriert es
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                9. In diesem Restaurant __________ viele Gerichte. (exista)
+                                <input type="text" class="answer-input" id="ex1-q9" placeholder="Raspunsul tau">
+                                <div class="answer-display" id="answer-ex1-q9" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Raspuns corect: gibt es
+                                </div>
+                            </div>
+
+                            <div class="question">
+                                10. Beim Gewitter __________ und __________ . (tuna si fulgera)
+                                <input type="text" class="answer-input" id="ex1-q10" placeholder="Raspunsul tau">
+                                <div class="answer-display" id="answer-ex1-q10" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Raspuns corect: donnert es und blitzt es
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 15px; margin-top: 30px;">
+                                <button class="check-btn" onclick="verifyAnswers('ex1', 10)">✓ Verifica raspunsurile</button>
+                                <button class="check-btn" style="background: #6b7280;" onclick="resetExercise('ex1', 10)">↻ Reseteaza</button>
+                            </div>
+                            <div id="result-ex1" class="feedback" style="display:none; margin-top: 20px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exercise 2 -->
+            <section id="exercitiul2">
+                <div class="dropdown-section">
+                    <div class="dropdown-header" onclick="toggleDropdown('ex2')">
+                        <span>📝 Exercitiul 2: Tradu propozitiile in germana</span>
+                        <span class="arrow" id="arrow-ex2">▼</span>
+                    </div>
+                    <div class="dropdown-content" id="ex2">
+                        <div class="exercise">
+                            <p class="exercise-instruction">Instructiuni: Tradu urmatoarele propozitii folosind verbe impersonale.</p>
+                            
+                            <div class="question">
+                                1. Ploua tare afara.
+                                <input type="text" class="answer-input" id="ex2-q1" placeholder="Raspunsul tau">
+                                <div class="answer-display" id="answer-ex2-q1" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Raspuns corect: Es regnet stark draußen.
+                                </div>
+                            </div>
+                            
+                            <div class="question">
+                                2. Suna la usa.
+                                <input type="text" class="answer-input" id="ex2-q2" placeholder="Raspunsul tau">
+                                <div class="answer-display" id="answer-ex2-q2" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Raspuns corect: Es klingelt an der Tür.
+                                </div>
+                            </div>
+                            
+                            <div class="question">
+                                3. Se intuneca deja.
+                                <input type="text" class="answer-input" id="ex2-q3" placeholder="Raspunsul tau">
+                                <div class="answer-display" id="answer-ex2-q3" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Raspuns corect: Es wird schon dunkel.
+                                </div>
+                            </div>
+                            
+                            <div class="question">
+                                4. Miroase a cafea.
+                                <input type="text" class="answer-input" id="ex2-q4" placeholder="Raspunsul tau">
+                                <div class="answer-display" id="answer-ex2-q4" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Raspuns corect: Es riecht nach Kaffee.
+                                </div>
+                            </div>
+                            
+                            <div class="question">
+                                5. Exista multe posibilitati.
+                                <input type="text" class="answer-input" id="ex2-q5" placeholder="Raspunsul tau">
+                                <div class="answer-display" id="answer-ex2-q5" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Raspuns corect: Es gibt viele Möglichkeiten.
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 15px; margin-top: 30px;">
+                                <button class="check-btn" onclick="verifyAnswers('ex2', 5)">✓ Verifica raspunsurile</button>
+                                <button class="check-btn" style="background: #6b7280;" onclick="resetExercise('ex2', 5)">↻ Reseteaza</button>
+                            </div>
+                            <div id="result-ex2" class="feedback" style="display:none; margin-top: 20px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exercise 3 -->
+            <section id="exercitiul3">
+                <div class="dropdown-section">
+                    <div class="dropdown-header" onclick="toggleDropdown('ex3')">
+                        <span>📝 Exercitiul 3: Corecteaza greselile</span>
+                        <span class="arrow" id="arrow-ex3">▼</span>
+                    </div>
+                    <div class="dropdown-content" id="ex3">
+                        <div class="exercise">
+                            <p class="exercise-instruction">Instructiuni: Identifica si corecteaza greselile din propozitiile de mai jos.</p>
+                            
+                            <div class="question">
+                                1. Er schneit heute.
+                                <input type="text" class="answer-input" id="ex3-q1" placeholder="Raspunsul tau">
+                                <div class="answer-display" id="answer-ex3-q1" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Raspuns corect: Es schneit heute.
+                                </div>
+                            </div>
+                            
+                            <div class="question">
+                                2. Sie regnet stark.
+                                <input type="text" class="answer-input" id="ex3-q2" placeholder="Raspunsul tau">
+                                <div class="answer-display" id="answer-ex3-q2" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Raspuns corect: Es regnet stark.
+                                </div>
+                            </div>
+                            
+                            <div class="question">
+                                3. Ich donnert laut.
+                                <input type="text" class="answer-input" id="ex3-q3" placeholder="Raspunsul tau">
+                                <div class="answer-display" id="answer-ex3-q3" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Raspuns corect: Es donnert laut.
+                                </div>
+                            </div>
+                            
+                            <div class="question">
+                                4. Du klingelst an der Tür.
+                                <input type="text" class="answer-input" id="ex3-q4" placeholder="Raspunsul tau">
+                                <div class="answer-display" id="answer-ex3-q4" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Raspuns corect: Es klingelt an der Tür.
+                                </div>
+                            </div>
+                            
+                            <div class="question">
+                                5. Wir frieren nachts.
+                                <input type="text" class="answer-input" id="ex3-q5" placeholder="Raspunsul tau">
+                                <div class="answer-display" id="answer-ex3-q5" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Raspuns corect: Es friert nachts.
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 15px; margin-top: 30px;">
+                                <button class="check-btn" onclick="verifyAnswers('ex3', 5)">✓ Verifica raspunsurile</button>
+                                <button class="check-btn" style="background: #6b7280;" onclick="resetExercise('ex3', 5)">↻ Reseteaza</button>
+                            </div>
+                            <div id="result-ex3" class="feedback" style="display:none; margin-top: 20px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exercise 4 -->
+            <section id="exercitiul4">
+                <div class="dropdown-section">
+                    <div class="dropdown-header" onclick="toggleDropdown('ex4')">
+                        <span>📝 Exercitiul 4: Creeaza propozitii</span>
+                        <span class="arrow" id="arrow-ex4">▼</span>
+                    </div>
+                    <div class="dropdown-content" id="ex4">
+                        <div class="exercise">
+                            <p class="exercise-instruction">Instructiuni: Creeaza cate o propozitie completa folosind urmatoarele verbe impersonale.</p>
+                            
+                            <div class="question">
+                                1. es hagelt
+                                <textarea class="answer-input" id="ex4-q1" placeholder="Scrie propozitia ta aici..." rows="2"></textarea>
+                                <div class="answer-display" id="answer-ex4-q1" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Exemplu de raspuns: Es hagelt im Sommer selten.
+                                </div>
+                            </div>
+                            
+                            <div class="question">
+                                2. es riecht
+                                <textarea class="answer-input" id="ex4-q2" placeholder="Scrie propozitia ta aici..." rows="2"></textarea>
+                                <div class="answer-display" id="answer-ex4-q2" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Exemplu de raspuns: Es riecht nach frischem Brot in der Bäckerei.
+                                </div>
+                            </div>
+                            
+                            <div class="question">
+                                3. es taut
+                                <textarea class="answer-input" id="ex4-q3" placeholder="Scrie propozitia ta aici..." rows="2"></textarea>
+                                <div class="answer-display" id="answer-ex4-q3" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Exemplu de raspuns: Es taut im Frühling.
+                                </div>
+                            </div>
+                            
+                            <div class="question">
+                                4. es dämmert
+                                <textarea class="answer-input" id="ex4-q4" placeholder="Scrie propozitia ta aici..." rows="2"></textarea>
+                                <div class="answer-display" id="answer-ex4-q4" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Exemplu de raspuns: Es dämmert schon am Nachmittag.
+                                </div>
+                            </div>
+                            
+                            <div class="question">
+                                5. es gibt
+                                <textarea class="answer-input" id="ex4-q5" placeholder="Scrie propozitia ta aici..." rows="2"></textarea>
+                                <div class="answer-display" id="answer-ex4-q5" style="margin-top: 10px; color: #10b981; font-weight: bold; display: none;">
+                                    ✓ Exemplu de raspuns: Es gibt heute keine Hausaufgaben.
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 15px; margin-top: 30px;">
+                                <button class="check-btn" onclick="checkCreativeExercise('ex4')">✓ Am terminat</button>
+                                <button class="check-btn" style="background: #6b7280;" onclick="resetExercise('ex4', 5)">↻ Reseteaza</button>
+                            </div>
+                            <div id="result-ex4" class="feedback" style="display:none; margin-top: 20px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <div style="text-align: center; margin: 50px 0; padding: 30px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 12px;">
+                <h2 style="color: white; margin-bottom: 20px;">🎴 Exerseaza cu Flashcard-uri!</h2>
+                <p style="color: white; font-size: 18px; margin-bottom: 25px;">Consolideaza cunostintele cu flashcard-uri interactive si pronuntie audio!</p>
+                <a href="flashcards.html" class="check-btn" style="background: white; color: #10b981; text-decoration: none; display: inline-block;">
+                    Incepe sa exersezi →
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Mult succes la invatare! 🌟</strong></p>
+            <p>© 2026 Claudia Toth - Curs autorizat de limba germana</p>
+        </div>
+
+        <!-- Back to Top Button -->
+        <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+            ↑
+        </button>
+    </div>
+
+    <script>
+        // Toggle hamburger menu
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Close menu when clicking on a navigation link
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const navMenu = document.getElementById('navMenu');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Audio playback function
+        function playAudio(id) {
+            const audio = document.getElementById('audio-' + id);
+            if (audio) {
+                audio.play();
+            }
+        }
+
+        function toggleDropdown(id) {
+            const content = document.getElementById(id);
+            const arrow = document.getElementById('arrow-' + id);
+            
+            content.classList.toggle('active');
+            arrow.classList.toggle('rotated');
+        }
+
+        // Verify answers function
+        function verifyAnswers(exerciseId, numQuestions) {
+            let allFilled = true;
+            
+            for (let i = 1; i <= numQuestions; i++) {
+                const input = document.getElementById(`${exerciseId}-q${i}`);
+                if (!input.value.trim()) {
+                    allFilled = false;
+                    break;
+                }
+            }
+            
+            const resultDiv = document.getElementById(`result-${exerciseId}`);
+            
+            if (allFilled) {
+                // Show all answers
+                for (let i = 1; i <= numQuestions; i++) {
+                    const answerDiv = document.getElementById(`answer-${exerciseId}-q${i}`);
+                    if (answerDiv) {
+                        answerDiv.style.display = 'block';
+                    }
+                }
+                
+                resultDiv.className = 'feedback correct';
+                resultDiv.innerHTML = '<strong>✓ Excelent!</strong> Ai completat toate raspunsurile. Verifica fiecare raspuns cu solutia corecta de mai sus!';
+                resultDiv.style.display = 'block';
+            } else {
+                resultDiv.className = 'feedback incorrect';
+                resultDiv.innerHTML = '<strong>⚠ Atentie!</strong> Te rog sa completezi toate raspunsurile inainte de verificare.';
+                resultDiv.style.display = 'block';
+            }
+        }
+
+        // Check creative exercise (Exercise 4)
+        function checkCreativeExercise(exerciseId) {
+            let allFilled = true;
+            
+            for (let i = 1; i <= 5; i++) {
+                const input = document.getElementById(`${exerciseId}-q${i}`);
+                if (!input.value.trim()) {
+                    allFilled = false;
+                    break;
+                }
+            }
+            
+            const resultDiv = document.getElementById(`result-${exerciseId}`);
+            
+            if (allFilled) {
+                // Show all example answers
+                for (let i = 1; i <= 5; i++) {
+                    const answerDiv = document.getElementById(`answer-${exerciseId}-q${i}`);
+                    if (answerDiv) {
+                        answerDiv.style.display = 'block';
+                    }
+                }
+                
+                resultDiv.className = 'feedback correct';
+                resultDiv.innerHTML = '<strong>✓ Felicitari!</strong> Ai creat toate propozitiile. Compara-le cu exemplele de mai sus pentru inspiratie!';
+                resultDiv.style.display = 'block';
+            } else {
+                resultDiv.className = 'feedback incorrect';
+                resultDiv.innerHTML = '<strong>⚠ Atentie!</strong> Te rog sa scrii toate propozitiile inainte de a finaliza.';
+                resultDiv.style.display = 'block';
+            }
+        }
+
+        // Reset exercise function
+        function resetExercise(exerciseId, numQuestions) {
+            for (let i = 1; i <= numQuestions; i++) {
+                const input = document.getElementById(`${exerciseId}-q${i}`);
+                if (input) {
+                    input.value = '';
+                }
+                
+                // Hide answers again
+                const answerDiv = document.getElementById(`answer-${exerciseId}-q${i}`);
+                if (answerDiv) {
+                    answerDiv.style.display = 'none';
+                }
+            }
+            
+            const resultDiv = document.getElementById(`result-${exerciseId}`);
+            resultDiv.style.display = 'none';
+        }
+
+        // Back to top button
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide back to top button
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
