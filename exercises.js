@@ -174,7 +174,7 @@ function ex4Click(btn) {
     document.querySelectorAll(`.ex4-btn[data-side="${side}"]`).forEach(b => {
         if (!b.classList.contains('ex4-matched')) b.style.background = '#fff';
     });
-    btn.style.background = '#fef3c7';
+    btn.style.background = '#F5F0E8';
     ex4Selected[side] = { btn, idx };
     if (ex4Selected.de && ex4Selected.ro) {
         const ok = ex4Selected.de.idx === ex4Selected.ro.idx;

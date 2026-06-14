@@ -109,7 +109,7 @@ function showQuestion(idx) {
         inputHTML += '</div>';
     } else if (q.type === 'luckentext') {
         const sentence = q.sentence.replace('____', `<input type="text" id="test-input" value="${userAnswers[idx] || ''}" placeholder="completează" style="width:160px; margin:0 6px;">`);
-        inputHTML = `<p style="font-size:1.1rem; margin-bottom:8px;">${sentence}</p><p style="color:#6b7280; font-style:italic;">🇷🇴 ${q.translation || ''}</p>`;
+        inputHTML = `<p style="font-size:1.1rem; margin-bottom:8px;">${sentence}</p><p style="color:#5A5147; font-style:italic;">🇷🇴 ${q.translation || ''}</p>`;
     } else {
         const ro = q.ro ? `<p style="margin-bottom:8px;">🇷🇴 ${q.ro}</p>` : '';
         inputHTML = `${ro}<input type="text" id="test-input" value="${userAnswers[idx] || ''}" placeholder="răspunsul tău..." style="width:100%; padding:10px; font-size:1rem;">`;
@@ -221,14 +221,14 @@ function finishTest() {
         mistakes.forEach(m => {
             const userShow = m.userAnswer ? `<em>„${m.userAnswer}"</em>` : '<em>(fără răspuns)</em>';
             mistakesHTML += '<div style="background:#fff; padding:12px 14px; margin-bottom:10px; border-left:4px solid #dc2626; border-radius:6px;">' +
-                `<div style="font-weight:bold; color:#065f46; margin-bottom:6px;">Întrebarea ${m.idx} <span style="color:#6b7280; font-weight:normal; font-size:0.85rem;">· ${m.q.category}</span></div>` +
-                `<div style="margin-bottom:6px; color:#374151;">${m.q.question}` +
-                (m.q.sentence ? ` <em style="color:#6b7280;">${m.q.sentence}</em>` : '') +
-                (m.q.ro && !m.q.sentence ? ` <em style="color:#6b7280;">🇷🇴 ${m.q.ro}</em>` : '') +
+                `<div style="font-weight:bold; color:#065f46; margin-bottom:6px;">Întrebarea ${m.idx} <span style="color:#5A5147; font-weight:normal; font-size:0.85rem;">· ${m.q.category}</span></div>` +
+                `<div style="margin-bottom:6px; color:#1F1B16;">${m.q.question}` +
+                (m.q.sentence ? ` <em style="color:#5A5147;">${m.q.sentence}</em>` : '') +
+                (m.q.ro && !m.q.sentence ? ` <em style="color:#5A5147;">🇷🇴 ${m.q.ro}</em>` : '') +
                 '</div>' +
                 `<div style="color:#dc2626; font-size:0.92rem;">❌ Răspunsul tău: ${userShow}</div>` +
                 `<div style="color:#047857; font-size:0.92rem; margin-top:4px;">✓ Răspuns corect: <strong>${m.q.correct}</strong></div>` +
-                `<div style="color:#6b7280; font-size:0.88rem; font-style:italic; margin-top:6px; padding-top:6px; border-top:1px dashed #e5e7eb;">💡 ${m.q.explanation}</div>` +
+                `<div style="color:#5A5147; font-size:0.88rem; font-style:italic; margin-top:6px; padding-top:6px; border-top:1px dashed #e5e7eb;">💡 ${m.q.explanation}</div>` +
                 '</div>';
         });
         mistakesHTML += '</div>';
@@ -240,7 +240,7 @@ function finishTest() {
     r.innerHTML = `
         <h3 style="color:#065f46; text-align:center;">${passed ? '🏆 Felicitări — Test trecut!' : '📖 Mai exersează puțin'}</h3>
         <div style="text-align:center; font-size:2rem; font-weight:bold; color:${passed ? '#047857' : '#dc2626'}; margin:20px 0;">${correct} / ${total} <span style="font-size:1.2rem;">(${pct}%)</span></div>
-        <p style="text-align:center; color:#6b7280;">${passed ? 'Stăpânești verbele impersonale și expresiile cu „es"!' : 'Recitește subsecțiunile și încearcă din nou.'}</p>
+        <p style="text-align:center; color:#5A5147;">${passed ? 'Stăpânești verbele impersonale și expresiile cu „es"!' : 'Recitește subsecțiunile și încearcă din nou.'}</p>
         ${mistakesHTML}
         <div style="text-align:center; margin-top:20px;">
             <button class="btn btn-check" onclick="resetTest()">↻ Reia testul</button>

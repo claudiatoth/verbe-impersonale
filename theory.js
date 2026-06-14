@@ -41,7 +41,7 @@ const theoryHTML = `
                 </ul>
             </div>
 
-            <div class="theory-box" style="background:#fef3c7;">
+            <div class="theory-box" style="background:#F5F0E8;">
                 <h4>⚠️ 3 capcane mari</h4>
                 <ol style="margin-top:6px;">
                     <li style="margin-bottom:8px;"><strong>„es" e OBLIGATORIU</strong> — nu poate fi omis. <em>Regnet</em> singur (fără es) e GREȘIT.</li>
@@ -120,7 +120,7 @@ const theoryHTML = `
                 </tbody>
             </table>
 
-            <div class="theory-box" style="background:#fef3c7; margin-top:14px;">
+            <div class="theory-box" style="background:#F5F0E8; margin-top:14px;">
                 <h4>📌 Atenție la structura cu „werden"</h4>
                 <p><em>es wird hell / dunkel</em> = <strong>werden</strong> (a deveni) folosit impersonal + adjectiv. Aici werden se conjugă la P3 sg „wird". La Perfekt: <em>es ist hell geworden</em> (cu sein, ca werden!).</p>
             </div>
@@ -155,7 +155,7 @@ const theoryHTML = `
                 </tbody>
             </table>
 
-            <div class="theory-box" style="background:#fef3c7; margin-top:14px;">
+            <div class="theory-box" style="background:#F5F0E8; margin-top:14px;">
                 <h4>⚠️ Capcana „es schmeckt MIR" vs „es schmeckt MICH"</h4>
                 <p><em>es schmeckt</em> cere <strong>DATIV</strong>: „<strong>mir</strong>, <strong>dir</strong>, <strong>ihm</strong>, <strong>uns</strong>, etc." — Verb cu Dativ pentru persoana care simte/percepe gustul. NU se zice „es schmeckt mich" (acuzativ).</p>
             </div>
@@ -199,7 +199,7 @@ const theoryHTML = `
                 </tbody>
             </table>
 
-            <div class="theory-box" style="background:#fef3c7; margin-top:14px;">
+            <div class="theory-box" style="background:#F5F0E8; margin-top:14px;">
                 <h4>🚨 Capcana cea mai mare — „es gibt" vs „es ist"</h4>
                 <p><strong>es gibt + Akkusativ</strong> = exprimă <em>existența</em> sau <em>disponibilitatea</em>:</p>
                 <ul style="margin-top:6px;">
@@ -244,7 +244,7 @@ const theoryHTML = `
                 </tbody>
             </table>
 
-            <div class="theory-box" style="background:#fef3c7; margin-top:14px;">
+            <div class="theory-box" style="background:#F5F0E8; margin-top:14px;">
                 <h4>🚨 La Perfekt — auxiliarul HABEN (cele mai multe) sau SEIN (rar)</h4>
                 <p>Majoritatea verbelor impersonale folosesc <strong>haben</strong> la Perfekt:</p>
                 <ul style="margin-top:6px;">

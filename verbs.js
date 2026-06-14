@@ -39,7 +39,7 @@ const verbsData = [
 function tenseTable(title, rows) {
     let r = '';
     rows.forEach(function(x) {
-        r += '<tr><td><strong>' + x[0] + '</strong></td><td>' + x[1] + '</td><td><em style="color:#6b7280;">' + x[2] + '</em></td></tr>';
+        r += '<tr><td><strong>' + x[0] + '</strong></td><td>' + x[1] + '</td><td><em style="color:#5A5147;">' + x[2] + '</em></td></tr>';
     });
     return '<div class="theory-box" style="margin:8px 0;"><h4>' + title + '</h4><table class="grammar-table"><tr><th>Pronume</th><th>Germană</th><th>Traducere RO</th></tr>' + r + '</table></div>';
 }
@@ -49,15 +49,15 @@ function perfektCompact(v) {
     if (v.impersonal) {
         return '<div class="theory-box" style="margin:8px 0; background:#d1fae5;">' +
             '<h4>Perfekt (perfect compus / timp vorbit)</h4>' +
-            '<p style="margin:0;">🚨 Verb IMPERSONAL — doar forma „<strong>es</strong>": <em>' + ex[0] + ' <strong>' + ex[1] + '</strong></em> · <em style="color:#6b7280;">' + ex[2] + '</em><br>' +
-            '<small style="color:#6b7280;">NU se conjugă cu ich/du/wir/ihr/sie — există DOAR forma a 3-a sg cu „es".</small></p></div>';
+            '<p style="margin:0;">🚨 Verb IMPERSONAL — doar forma „<strong>es</strong>": <em>' + ex[0] + ' <strong>' + ex[1] + '</strong></em> · <em style="color:#5A5147;">' + ex[2] + '</em><br>' +
+            '<small style="color:#5A5147;">NU se conjugă cu ich/du/wir/ihr/sie — există DOAR forma a 3-a sg cu „es".</small></p></div>';
     }
     var ex2 = v.perf[2] || v.perf[0];
-    var hint = '<small style="color:#6b7280;">Conjugi auxiliarul ca de obicei (' + (v.aux === 'sein' ? 'ich bin, du bist, er ist...' : 'ich habe, du hast, er hat...') + ') + <strong>' + v.part + '</strong>.</small>';
+    var hint = '<small style="color:#5A5147;">Conjugi auxiliarul ca de obicei (' + (v.aux === 'sein' ? 'ich bin, du bist, er ist...' : 'ich habe, du hast, er hat...') + ') + <strong>' + v.part + '</strong>.</small>';
     return '<div class="theory-box" style="margin:8px 0; background:#d1fae5;">' +
         '<h4>Perfekt (perfect compus / timp vorbit)</h4>' +
         '<p style="margin:0;">Auxiliar <strong>' + v.aux + '</strong> + participiul <strong>' + v.part + '</strong><br>' +
-        '<em>Exemplu:</em> ' + ex2[0] + ' <strong>' + ex2[1] + '</strong> · <em style="color:#6b7280;">' + ex2[2] + '</em><br>' +
+        '<em>Exemplu:</em> ' + ex2[0] + ' <strong>' + ex2[1] + '</strong> · <em style="color:#5A5147;">' + ex2[2] + '</em><br>' +
         hint + '</p></div>';
 }
 
@@ -75,7 +75,7 @@ function buildVerbs() {
 
     verbsData.forEach(function(v, i) {
         let badge;
-        if (v.impersonal) badge = '#f59e0b';
+        if (v.impersonal) badge = '#D4A574';
         else if (v.typ.indexOf('auxiliar') >= 0) badge = '#7c3aed';
         else if (v.typ.indexOf('tare') >= 0) badge = '#dc2626';
         else badge = '#047857';
@@ -89,7 +89,7 @@ function buildVerbs() {
             tenseTable('Präsens (prezent)', v.praes) +
             tenseTable('Präteritum (imperfect / timp scris)', v.praet) +
             perfektCompact(v) +
-            (v.note ? '<div class="theory-box" style="background:#fef3c7;"><p style="margin:0;"><strong>⚠️ </strong>' + v.note + '</p></div>' : '') +
+            (v.note ? '<div class="theory-box" style="background:#F5F0E8;"><p style="margin:0;"><strong>⚠️ </strong>' + v.note + '</p></div>' : '') +
             '</div></div>';
     });
 
